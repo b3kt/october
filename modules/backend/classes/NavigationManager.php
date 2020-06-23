@@ -373,7 +373,7 @@ class NavigationManager
                 }
             }
 
-            if (empty($item->counter) || !is_numeric($item->counter)) {
+            if (empty($item->counter)) {
                 $item->counter = null;
             }
         }
@@ -420,9 +420,6 @@ class NavigationManager
                 if (empty($item->counter)) {
                     $item->counter = null;
                 }
-            }
-            if (!is_null($item->counter) && !is_numeric($item->counter)) {
-                throw new SystemException("The menu item {$activeItem->code}.{$item->code}'s counter property is invalid. Check to make sure it's numeric or callable. Value: " . var_export($item->counter, true));
             }
         }
 
